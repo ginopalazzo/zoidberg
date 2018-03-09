@@ -13,8 +13,9 @@ zoidberg
         :target: https://zoidberg.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
-
+.. image:: https://upload.wikimedia.org/wikipedia/en/4/4a/Dr_John_Zoidberg.png
+        :target: https://upload.wikimedia.org/wikipedia/en/4/4a/Dr_John_Zoidberg.png
+        :alt: Documentation Status
 
 Are you ready to operate, Doctor? - I'd love to, but first I have to perform surgery.
 

@@ -1,0 +1,47 @@
+{
+    "country": "es",
+    "domains": ["elatleta.com", "femede.es"],
+    "area":
+    [
+        {
+            "slug": "traumatologia",
+            "illness":
+            [
+                {
+                    "slug": "femoroacetabular",
+                    "name": "choque femoroacetabular",
+                    "webs":
+                    [
+                        {
+                            "domain": "elatleta.com",
+                            "urls": [
+                                "http://www.elatleta.com/foro/showthread.php?119886-El-choque-f%C3%A9moro-acetabular",
+                                "http://www.elatleta.com/foro/showthread.php?154965-operados-con-margalet-resultados"
+                            ]
+                         },
+                        {
+                            "domain": "femede.es",
+                            "urls": [
+                                "http://www.femede.es/foro/viewtopic.php?t=2517",
+                                "http://www.femede.es/foro/viewtopic.php?t=15"
+                            ]
+                         }
+                    ]
+                },
+                {
+                    "slug": "piramidal",
+                    "name": "sindrome del piramidal",
+                    "webs":
+                    [
+                        {
+                            "domain": "elatleta.com",
+                            "urls": [
+                                "http://www.elatleta.com/foro/showthread.php?97466-Sindrome-del-Piramidal-de-las-narices"
+                            ]
+                         }
+                    ]
+                }
+            ]
+        }
+    ]
+}

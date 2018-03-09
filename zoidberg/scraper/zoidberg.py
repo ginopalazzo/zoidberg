@@ -1,14 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-Zoidberg could be use in two different ways:
-    a)  CL:
-        python zoidberg args
-    b)  python module:
-        from zoidbderg import Zoidberg
-
-"""
-
 from twisted.internet import reactor, defer
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
@@ -19,7 +10,7 @@ import os
 configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s', 'LOG_LEVEL': 'WARNING'})
 
 
-class Zoidberg:
+class ZoidbergReactor:
     """
     Start a new CrawlerRunner object for the zoidberg scraper
     """
@@ -42,11 +33,11 @@ class Zoidberg:
         self.illness = illness
         self.output = output
         self.country = country.lower()
-        self.country_db = 'scraper/db/' + country + '/' + country + '_db.json'
+        self.country_db = 'db/' + country + '/' + country + '_db.json'
         if path:
             self.path = path
         else:
-            self.path = 'zoidberg_output.' + self.output
+            self.path = 'zoigber_output.' + self.output
         # set the ITEM_PIPELINES settings for the specific output
         self.settings = get_project_settings()
         self.settings.set('ITEM_PIPELINES', {
@@ -110,55 +101,15 @@ class Zoidberg:
         else:
             return [illness['slug'] for _area in data['area'] for illness in _area['illness'] if _area['slug'] == area]
 
-'''
+"""
 if __name__ == "__main__":
-    zoidberg = Zoidberg(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='bbb.csv', output='csv')
-   
+    zoidberg = ZoidbergReactor(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='spiders/aah.csv', output='csv')
+    '''
     print(zoidberg.get_countries())
     print(zoidberg.get_domains())
     print(zoidberg.get_areas())
     print(zoidberg.get_illness_for_area(area='traumatologia'))
-   
+    '''
     zoidberg.conf()
     zoidberg.run()
-'''
-
-
-if __name__ == "__main__":
-    import argparse
-
-    def get_args():
-        """This function parses and return arguments passed in"""
-        # Assign description to the help doc
-        parser = argparse.ArgumentParser(
-            description="Are you ready to operate, Doctor? - I'd love to, but first I have to perform surgery.")
-        # Add arguments
-        parser.add_argument(
-            '-d', metavar='doctor', type=str, required=True,
-            help='doctor to find')
-        parser.add_argument(
-            '-c', metavar='country', type=str, required=True,
-            help="ISO 3166-1 alfa-2 country code. i.e. 'es' for 'Spain'.")
-        parser.add_argument(
-            '-a', metavar='area', type=str, required=True,
-            help='medical area')
-        parser.add_argument(
-            '-i', metavar='illness', type=str, required=True,
-            help='medical illness')
-        parser.add_argument(
-            '-o', metavar='output', type=str, required=False, default='csv',
-            help='output file type: csv or json (default: csv)')
-        parser.add_argument(
-            '-p', metavar='path', type=str, required=False,
-            help='file output path (default: zoidberg_output.csv/json)')
-        parser.add_argument(
-            '-l', metavar='log_level', type=str, required=False, default='warning',
-            help='screen log level output (default: warning)')
-
-        args = parser.parse_args()
-        print(args)
-        zoidber_runner = Zoidberg(country=args.c, doctor=args.d, area=args.a, illness=args.i, path=args.p, output=args.o)
-        zoidber_runner.conf()
-        zoidber_runner.run()
-
-    get_args()
+"""
