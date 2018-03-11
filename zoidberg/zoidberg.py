@@ -157,8 +157,8 @@ if __name__ == "__main__":
 
         args = parser.parse_args()
         print(args)
-        zoidber_runner = Zoidberg(country=args.c, doctor=args.d, area=args.a, illness=args.i, path=args.p, output=args.o)
-        zoidber_runner.conf()
-        zoidber_runner.run()
+        zoidberg_runner = Zoidberg(country=args.c, doctor=args.d, area=args.a, illness=args.i, path=args.p, output=args.o)
+        zoidberg_runner.conf()
+        zoidberg_runner.run()
 
     get_args()
