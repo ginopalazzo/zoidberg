@@ -43,7 +43,7 @@ pyflakes==1.6.0
 Pygments==2.2.0
 pyOpenSSL==17.5.0
 pyparsing==2.2.0
-pytest==3.4.1
+pytest==3.4.2
 pytest-runner==2.11.1
 python-dateutil==2.6.1
 pytz==2018.3
@@ -63,4 +63,5 @@ virtualenv==15.1.0
 w3lib==1.19.0
 watchdog==0.8.3
 whichcraft==0.4.1
+-e git+https://github.com/ginopalazzo/zoidberg@0b353ce303171fb384bd971cb8c162420b083f55#egg=zoidberg
 zope.interface==4.4.3
