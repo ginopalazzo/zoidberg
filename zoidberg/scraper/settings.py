@@ -14,9 +14,11 @@ BOT_NAME = 'scraper'
 SPIDER_MODULES = ['scraper.spiders']
 NEWSPIDER_MODULE = 'scraper.spiders'
 
+# db configuration
+COUNTRIES = ['es']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'zoidberg (+http://www.yourdomain.com)'
+USER_AGENT = 'zoidberg (+https://www.github.com/ginopalazzo/zoidberg)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True

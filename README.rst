@@ -13,6 +13,9 @@ zoidberg
         :target: https://zoidberg.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
+.. image:: https://pyup.io/repos/github/ginopalazzo/zoidberg/python-3-shield.svg
+        :target: https://pyup.io/repos/github/ginopalazzo/zoidberg/
+        :alt: Python 3
 
 Are you ready to operate, Doctor? - I'd love to, but first I have to perform surgery.
 
