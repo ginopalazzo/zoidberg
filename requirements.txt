@@ -48,7 +48,7 @@ pytest-runner==4.0
 python-dateutil==2.7.0
 pytz==2018.3
 PyYAML==3.12
-queuelib==1.4.2
+queuelib==1.5.0
 requests==2.18.4
 Scrapy==1.5.0
 service-identity==17.0.0
