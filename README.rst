@@ -73,8 +73,10 @@ or clone from git clone git@github.com:your_name_here/zoidberg.git and use the Z
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-Zoidgber image By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=18173215
+* Gino Palazzo <ginopalazzo@gmail.com>
+
+* This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+* Zoidgber image from Wikipedia: https://en.wikipedia.org/w/index.php?curid=18173215
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _Scrapy: https://scrapy.org/
