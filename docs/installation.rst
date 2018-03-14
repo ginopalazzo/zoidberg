@@ -12,7 +12,7 @@ To install zoidberg, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install zoidberg
+    $ pip install dr-zoidberg
 
 This is the preferred method to install zoidberg, as it will always install the most recent stable release.
 
