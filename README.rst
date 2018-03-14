@@ -4,7 +4,7 @@ zoidberg
 
 
 .. image:: https://img.shields.io/pypi/v/zoidberg.svg
-        :target: https://pypi.python.org/pypi/zoidberg
+        :target: https://pypi.python.org/pypi/dr-zoidberg
 
 .. image:: https://img.shields.io/travis/ginopalazzo/zoidberg.svg
         :target: https://travis-ci.org/ginopalazzo/zoidberg
@@ -28,11 +28,47 @@ Are you ready to operate, Doctor? - I'd love to, but first I have to perform sur
 * Free software: MIT license
 * Documentation: https://zoidberg.readthedocs.io.
 
-
 Features
 --------
 
-* TODO
+Zoidberg is a small lobster crawler that use Scrapy_ to get surgery doctor reviews from Internet message board.
+Sometimes is hard to find real reviews of surgery doctors in Google.
+
+For example (my case), I have Femoroacetabular Impingement in the hip and the only medical solution is surgery.
+I thought Margalet was the best doctor who perform this operation but when I searched with Zoidberg, I realized that
+López Carro was a much better choice.
+
+By typing::
+
+    python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
+
+you get all the doctor Margalet comments for the femoroacetabular impingement in the test.csv file.
+
+At this moment it only implement Femoroacetabular Impingement in Spain, but hopefully with some collaboration,
+Zoidberg will extend his functionality
+
+Install
+--------
+
+Just
+* pip install dr-zoidberg
+* or clone this repository.
+
+Usage
+--------
+To use zoidberg in a project::
+
+    from zoidberg import zoidberg
+
+    z = zoidberg.Zoidberg(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='test.csv', output='csv')
+    print(z)
+    z.conf()
+    z.run()
+
+or clone from git clone git@github.com:your_name_here/zoidberg.git and use the Zoidberg CL::
+
+    python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
+
 
 Credits
 -------
@@ -41,4 +77,5 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 Zoidgber image By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=18173215
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Scrapy: https://scrapy.org/
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
