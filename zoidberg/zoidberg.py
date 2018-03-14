@@ -18,6 +18,8 @@ import os
 
 configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s', 'LOG_LEVEL': 'WARNING'})
 
+HERE = os.path.abspath(os.path.dirname(__file__))
+
 
 class Zoidberg:
     """
@@ -43,7 +45,8 @@ class Zoidberg:
             self.illness = illness
             self.output = output.lower()
             self.country = country.lower()
-            self.country_db = 'scraper/db/' + country + '/' + country + '_db.json'
+            print(HERE)
+            self.country_db = HERE + '/scraper/db/' + country + '/' + country + '_db.json'
             if path:
                 self.path = path
             else:
