@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
+# https://github.com/audreyr/cookiecutter-pypackage
+# pypi release checklist: https://gist.github.com/audreyr/5990987
+
 """The setup script."""
 
 from setuptools import setup, find_packages

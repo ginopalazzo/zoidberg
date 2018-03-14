@@ -50,7 +50,8 @@ Zoidberg will extend his functionality
 Install
 --------
 
-Just
+Just:
+
 * pip install dr-zoidberg
 * or clone this repository.
 
@@ -61,11 +62,14 @@ To use zoidberg in a project::
     from zoidberg import zoidberg
 
     z = zoidberg.Zoidberg(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='test.csv', output='csv')
-    print(z)
     z.conf()
     z.run()
 
-or clone from git clone git@github.com:your_name_here/zoidberg.git and use the Zoidberg CL::
+or clone from::
+
+    git clone git@github.com:ginopalazzo/zoidberg.git
+
+and use the Zoidberg CLI::
 
     python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
 
@@ -73,8 +77,7 @@ or clone from git clone git@github.com:your_name_here/zoidberg.git and use the Z
 Credits
 -------
 
-* Gino Palazzo <ginopalazzo@gmail.com>
-
+* Gino Palazzo ginopalazzo@gmail.com
 * This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 * Zoidgber image from Wikipedia: https://en.wikipedia.org/w/index.php?curid=18173215
 
