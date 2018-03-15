@@ -9,18 +9,22 @@ Zoidberg could be use in two different ways:
 """
 
 import os
+import sys
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+sys.path.append('..')
+sys.path.append(HERE)
 
 from twisted.internet import reactor, defer
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
-from zoidberg.scraper.spiders import es_spider
-# from scraper.spiders import es_spider
+# from zoidberg.scraper.spiders import es_spider
+from scraper.spiders.es_spider import *
 import json
 
 configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s', 'LOG_LEVEL': 'WARNING'})
 
-HERE = os.path.abspath(os.path.dirname(__file__))
 
 class Zoidberg:
     """
@@ -86,7 +90,7 @@ class Zoidberg:
             domain = list_urls[i]['domain']
             urls = list_urls[i]['urls']
             #es_spider.ElAtletaComSpider
-            spider = eval('es_spider.' + domain.replace('.', '').title() + 'Spider')
+            spider = eval(domain.replace('.', '').title() + 'Spider')
             zoidgber_crawler = runner.create_crawler(spider)
             yield runner.crawl(zoidgber_crawler, doctor_regex=doctor_words, urls=urls, path=self.path)
         reactor.stop()  # the script will block here until the crawling is finished
