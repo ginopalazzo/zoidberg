@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Scrapy imports
 import scrapy
-from ..zoidberg_spider import ZoidbergSpider
+from . import zoidberg_spider
 """
 Spiders for the Spain.
 country:
@@ -10,14 +10,15 @@ country:
  domains: ["elatleta.com", "femede.es"]
 """
 
-class ElAtletaComSpider(ZoidbergSpider):
+
+class ElatletacomSpider(zoidberg_spider.ZoidbergSpider):
     """
     Extends Zoidberg Base Spider for elatleta.com domain/source
     """
     name = "elatleta.com"
 
     def __init__(self, doctor_regex=None, urls=None, path='default', *args, **kwargs):
-        super(ElAtletaComSpider, self).__init__(doctor_regex=doctor_regex, urls=urls, path=path, name=self.name, *args,
+        super(ElatletacomSpider, self).__init__(doctor_regex=doctor_regex, urls=urls, path=path, name=self.name, *args,
                                                 **kwargs)
 
     def parse(self, response):
@@ -51,14 +52,14 @@ class ElAtletaComSpider(ZoidbergSpider):
             yield scrapy.Request(next_page, callback=self.parse)
 
 
-class FemedeEsSpider(ZoidbergSpider):
+class FemedeesSpider(zoidberg_spider.ZoidbergSpider):
     """
     Extends Zoidberg Base Spider for femede.es domain/source
     """
     name = "femede.es"
 
     def __init__(self, doctor_regex=None, urls=None, path='default', *args, **kwargs):
-        super(FemedeEsSpider, self).__init__(doctor_regex=doctor_regex, urls=urls, path=path, name=self.name, *args,
+        super(FemedeesSpider, self).__init__(doctor_regex=doctor_regex, urls=urls, path=path, name=self.name, *args,
                                              **kwargs)
 
     def parse(self, response):
