@@ -74,6 +74,16 @@ and use the Zoidberg CLI::
     python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
 
 
+TODO
+--------
+
+* CLI: Change argparse to click.pocoo.org.
+* Get list of countries available.
+* Get list of areas available for a country.
+* Get list of illness available for an area.
+* Add keywords of illness for search.
+* Search a doctor for every area or illness.
+
 Credits
 -------
 
