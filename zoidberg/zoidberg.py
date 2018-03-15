@@ -6,19 +6,21 @@ Zoidberg could be use in two different ways:
         python zoidberg args
     b)  python module:
         from zoidbderg import Zoidberg
-
 """
+
+import os
 
 from twisted.internet import reactor, defer
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
+from scraper.spiders import es_spider
 import json
-import os
+
+HERE = os.path.abspath(os.path.dirname(__file__))
 
 configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s', 'LOG_LEVEL': 'WARNING'})
 
-HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 class Zoidberg:
@@ -84,7 +86,9 @@ class Zoidberg:
         for i in range(0, len(list_urls)):
             domain = list_urls[i]['domain']
             urls = list_urls[i]['urls']
-            zoidgber_crawler = runner.create_crawler(domain)
+            #es_spider.ElAtletaComSpider
+            spider = eval('es_spider.' + domain.replace('.', '').title() + 'Spider')
+            zoidgber_crawler = runner.create_crawler(spider)
             yield runner.crawl(zoidgber_crawler, doctor_regex=doctor_words, urls=urls, path=self.path)
         reactor.stop()  # the script will block here until the crawling is finished
 
