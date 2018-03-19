@@ -31,21 +31,21 @@ Are you ready to operate, Doctor? - I'd love to, but first I have to perform sur
 Features
 --------
 
-Zoidberg is a small lobster crawler that use Scrapy_ to get surgery doctor reviews from Internet message board.
-Sometimes is hard to find real reviews of surgery doctors in Google.
+Zoidberg is a small lobster crawler that use Scrapy_ to get surgeon reviews from an Internet message board.
+Sometimes it is hard to find real reviews of surgeons in Google.
 
 For example (my case), I have Femoroacetabular Impingement in the hip and the only medical solution is surgery.
-I thought Margalet was the best doctor who perform this operation but when I searched with Zoidberg, I realized that
+I thought Margalet was the best doctor to perform this operation but when I searched with Zoidberg, I realized that
 López Carro was a much better choice.
 
 By typing::
 
     python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
 
-you get all the doctor Margalet comments for the femoroacetabular impingement in the test.csv file.
+you get all the Doctor Margalet reviews for the femoroacetabular impingement in the test.csv file.
 
-At this moment it only implement Femoroacetabular Impingement in Spain, but hopefully with some collaboration,
-Zoidberg will extend his functionality
+At this moment it only implements Femoroacetabular Impingement in Spain, but hopefully with some collaboration,
+Zoidberg will extend its functionality.
 
 Install
 --------
@@ -78,10 +78,10 @@ TODO
 --------
 
 * CLI: Change argparse to click.pocoo.org.
-* Get list of countries available.
-* Get list of areas available for a country.
-* Get list of illness available for an area.
-* Add keywords of illness for search.
+* Get a list of countries available.
+* Get a list of areas available for a country.
+* Get a list of illnesses available for an area.
+* Add keywords of illness for each search.
 * Search a doctor for every area or illness.
 
 Credits
