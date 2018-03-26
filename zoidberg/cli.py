@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
 """Console script for zoidberg."""
+import os
 import sys
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+sys.path.append('..')
+sys.path.append(HERE)
+
 import click
 from zoidberg import Zoidberg
 from zoidberg import get_areas, get_illness
