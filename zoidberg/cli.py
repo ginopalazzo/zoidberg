@@ -5,7 +5,7 @@ import os
 import sys
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-sys.path.append('..')
+sys.path.append('.')
 sys.path.append(HERE)
 
 import click
