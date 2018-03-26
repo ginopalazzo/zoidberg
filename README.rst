@@ -79,6 +79,7 @@ TODO
 * DONE - Get a list of illnesses available for an area.
 * TODO - Add keywords of illness for each search.
 * TODO - Search a doctor for every area or illness.
+* TODO - Comprehensive tests
 
 Credits
 -------
