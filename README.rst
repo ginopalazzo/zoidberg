@@ -57,7 +57,10 @@ Just:
 
 Usage
 --------
-To use zoidberg in a project::
+
+To use Zoidberg from CLI just type zoidberg and follow the instructions.
+
+To use Zoidberg in a project::
 
     from zoidberg import zoidberg
 
@@ -65,24 +68,17 @@ To use zoidberg in a project::
     z.conf()
     z.run()
 
-or clone from::
-
-    git clone git@github.com:ginopalazzo/zoidberg.git
-
-and use the Zoidberg CLI::
-
-    python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
 
 
 TODO
 --------
 
-* CLI: Change argparse to click.pocoo.org.
-* Get a list of countries available.
-* Get a list of areas available for a country.
-* Get a list of illnesses available for an area.
-* Add keywords of illness for each search.
-* Search a doctor for every area or illness.
+* DONE - CLI: Change argparse to click.pocoo.org.
+* TODO - Get a list of countries available.
+* DONE - Get a list of areas available for a country.
+* DONE - Get a list of illnesses available for an area.
+* TODO - Add keywords of illness for each search.
+* TODO - Search a doctor for every area or illness.
 
 Credits
 -------
