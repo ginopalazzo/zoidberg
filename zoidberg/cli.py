@@ -5,10 +5,11 @@ import os
 import sys
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-sys.path.append('.')
+sys.path.append('..')
 sys.path.append(HERE)
 
 import click
+import zoidberg_main
 
 click.echo("Are you ready to operate, Doctor? - I'd love to, but first I have to perform surgery."
                "zoidberg.cli.main")
@@ -29,7 +30,7 @@ def main():
     path = click.prompt('Output file path', type=str, default='zoidberg_output.' + output)
     log = click.prompt('Level of logging', type=str, default='warning')
     import zoidberg
-    zoidberg_runner = zoidberg.Zoidberg(country=country, doctor=doctor, area=area, illness=illness, path=path, output=output)
+    zoidberg_runner = zoidberg_main.Zoidberg(country=country, doctor=doctor, area=area, illness=illness, path=path, output=output)
     zoidberg_runner.conf()
     zoidberg_runner.run()
     return 0
@@ -45,8 +46,7 @@ def cli_country():
 
 
 def cli_area(country):
-    import zoidberg
-    areas = zoidberg.get_areas(country)
+    areas = zoidberg_main.get_areas(country)
     text_area = 'Your medical area. Choices: ' + str(areas)
     area = click.prompt(text_area, type=str)
     if area in areas:
@@ -58,8 +58,7 @@ def cli_area(country):
 
 
 def cli_illness(country, area):
-    import zoidberg
-    illnesses = zoidberg.get_illness(country, area)
+    illnesses = zoidberg_main.get_illness(country, area)
     text_illness = 'Your medical illness for ' + area + '. Choices: ' + str(illnesses)
     illness = click.prompt(text_illness, type=str)
     if illness in illnesses:
