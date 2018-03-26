@@ -26,6 +26,21 @@ import json
 configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s', 'LOG_LEVEL': 'WARNING'})
 
 
+def get_countries(self):
+    import zoidberg.scraper.settings
+    return zoidberg.scraper.settings.COUNTRIES
+
+
+def get_areas(country):
+    data = json.load(open(HERE + '/scraper/db/' + country + '/' + country + '_db.json'))
+    return [area['slug'] for area in data['area']]
+
+
+def get_illness(country, area):
+    data = json.load(open(HERE + '/scraper/db/' + country + '/' + country + '_db.json'))
+    return [illness['slug'] for _area in data['area'] for illness in _area['illness'] if _area['slug'] == area]
+
+
 class Zoidberg:
     """
     Start a new CrawlerRunner object for the zoidberg scraper
@@ -85,7 +100,7 @@ class Zoidberg:
         runner = CrawlerRunner(self.settings)
         list_urls = self.get_list_urls(self.area, self.illness)
         doctor_words = self.get_doctor_regex_words(self.doctor)
-
+        print(list_urls)
         for i in range(0, len(list_urls)):
             domain = list_urls[i]['domain']
             urls = list_urls[i]['urls']
