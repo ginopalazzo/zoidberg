@@ -14,7 +14,7 @@ click==6.7
 constantly==15.1.0
 cookiecutter==1.6.0
 coverage==4.5.1
-cryptography==2.1.4
+cryptography==3.2
 cssselect==1.0.3
 docutils==0.14
 flake8==3.5.0
