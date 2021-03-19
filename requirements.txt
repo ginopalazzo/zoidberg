@@ -23,7 +23,7 @@ hyperlink==18.0.0
 idna==2.6
 imagesize==1.0.0
 incremental==17.5.0
-Jinja2==2.10
+Jinja2==2.11.3
 jinja2-time==0.2.0
 lxml==4.1.1
 MarkupSafe==1.0
