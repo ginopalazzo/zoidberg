@@ -47,7 +47,7 @@ pytest==3.4.2
 pytest-runner==2.11.1
 python-dateutil==2.6.1
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.4
 queuelib==1.5.0
 requests==2.18.4
 Scrapy==1.5.0
