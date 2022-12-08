@@ -7,7 +7,7 @@ Automat==0.6.0
 Babel==2.5.3
 binaryornot==0.4.4
 bumpversion==0.5.3
-certifi==2018.1.18
+certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
 click==6.7
